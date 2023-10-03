@@ -1,5 +1,7 @@
 # Container image that runs your code
 FROM alpine:3.10
+RUN apk add lftp
+RUN apk add openssh
 
 RUN ssh-keyscan -H ssh.strato.com >> ~/.ssh/known_hosts
 RUN mkdir /app
