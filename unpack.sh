@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-tar xf webapp.tar.gz -C ./$1
+tar xzf webapp.tar.gz -C ./$1

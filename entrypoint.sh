@@ -12,6 +12,6 @@ echo "send files"
 mkdir "/root/.ssh"
 ssh-keyscan -H ssh.strato.com > /root/.ssh/known_hosts
 
-lftp --env-password sftp://${INPUT_FTP_DOMAIN}@${INPUT_FTP_HOST} -e "put /github/workspace/$INPUT_SOURCE/webapp.tar.gz; put /github/workspace/unpack.sh; bye"
+lftp --env-password sftp://${INPUT_FTP_DOMAIN}@${INPUT_FTP_HOST} -e "put /github/workspace/$INPUT_SOURCE/webapp.tar.gz; bye"
 
 sshpass -p $LFTP_PASSWORD ssh ${INPUT_FTP_DOMAIN}@${INPUT_FTP_HOST} 'bash -s' < unpack.sh $INPUT_TARGET
