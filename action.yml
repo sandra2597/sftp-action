@@ -11,6 +11,9 @@ inputs:
   source:
     description: 'Path to the source folder'
     required: true
+  target:
+    description: 'Path to the target folder'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -18,3 +21,4 @@ runs:
     - ${{ inputs.ftp_domain }}
     - ${{ inputs.ftp_host }}
     - ${{ inputs.source }}
+    - ${{ inputs.target }}
