@@ -2,14 +2,14 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
+  who_to_greet:  # id of input
     description: 'Who to greet'
     required: false
     default: 'World'
-  ftp-domain:  # id of input
+  ftp_domain:  # id of input
     description: 'The domain name of the website'
     required: true
-  ftp-host:
+  ftp_host:
     description: 'The host name of the provider'
     required: true
   source:
@@ -22,7 +22,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
-    - ${{ inputs.ftp-domain }}
-    - ${{ inputs.ftp-host }}
+    - ${{ inputs.who_to_greet }}
+    - ${{ inputs.ftp_domain }}
+    - ${{ inputs.ftp_host }}
     - ${{ inputs.source }}

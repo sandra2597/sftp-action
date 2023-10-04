@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-echo "Variables: ${INPUT_FTP-DOMAIN} ${INPUT_FTP-HOST} ${INPUT_SOURCE}"
+echo "Variables: ${INPUT_FTP_DOMAIN} ${INPUT_FTP_HOST} ${INPUT_SOURCE}"
 echo $LFTP_PASSWORD
 time=$(date)
 echo "time=$time" >> $GITHUB_OUTPUT
@@ -14,4 +14,4 @@ ssh-keyscan -H ssh.strato.com > /root/.ssh/known_hosts
 echo "printing fingerpint"
 cat /root/.ssh/known_hosts
 echo "Connecting"
-lftp --env-password sftp://${INPUT_FTP-DOMAIN}@${INPUT_FTP-HOST} -e "debug; mirror -R /github/workspace/$INPUT_SOURCE /app; bye"
+lftp --env-password sftp://${INPUT_FTP_DOMAIN}@${INPUT_FTP_HOST} -e "debug; mirror -R /github/workspace/$INPUT_SOURCE /app; bye"
