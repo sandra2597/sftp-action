@@ -6,7 +6,7 @@ echo "install packages"
 cd /github/workspace/$INPUT_SOURCE/website
 composer install
 cd ../
-tar cf webapp.tar.gz
+tar cf webapp.tar.gz * 
 
 echo "send files"
 mkdir "/root/.ssh"
