@@ -8,7 +8,7 @@ echo "<p>hello world from github actions</p>" > /app/index.html
 
 echo "writing fingerprint"
 mkdir "$HOME/.ssh"
-ssh-keyscan -H ssh.strato.com > ~/.ssh/known_hosts
+ssh-keyscan -t rsa ssh.strato.com > ~/.ssh/known_hosts
 
 echo "printing fingerpint"
 cat ~/.ssh/known_hosts
