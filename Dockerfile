@@ -1,7 +1,7 @@
 # Container image that runs your code
-FROM alpine:3.10
-RUN apk add lftp
-RUN apk add openssh
+FROM compose:2.6
+RUN apk add lftp openssh
+RUN composer global require "laravel/installer=~1.1"
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
