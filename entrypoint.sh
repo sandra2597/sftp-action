@@ -7,10 +7,10 @@ echo "time=$time" >> $GITHUB_OUTPUT
 echo "<p>hello world from github actions</p>" > /app/index.html
 
 echo "writing fingerprint"
-mkdir "$HOME/.ssh"
-ssh-keyscan -t rsa ssh.strato.com > ~/.ssh/known_hosts
+mkdir "/root/.ssh"
+ssh-keyscan -t rsa ssh.strato.com > /root/.ssh/known_hosts
 
 echo "printing fingerpint"
-cat ~/.ssh/known_hosts
+cat /root/.ssh/known_hosts
 echo "Connecting"
 lftp --env-password sftp://$2@$3 -e "debug; mirror -R /app /app; bye"
