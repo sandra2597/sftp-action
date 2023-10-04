@@ -5,7 +5,7 @@ echo $LFTP_PASSWORD
 time=$(date)
 echo "time=$time" >> $GITHUB_OUTPUT
 echo "<p>hello world from github actions</p>" > /app/index.html
-ls myapp
+ls /github/workspace
 
 echo "writing fingerprint"
 mkdir "/root/.ssh"
