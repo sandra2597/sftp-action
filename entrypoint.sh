@@ -5,10 +5,11 @@ echo $LFTP_PASSWORD
 time=$(date)
 echo "time=$time" >> $GITHUB_OUTPUT
 echo "<p>hello world from github actions</p>" > /app/index.html
+ls
 
 echo "writing fingerprint"
 mkdir "/root/.ssh"
-ssh-keyscan -t rsa ssh.strato.com > /root/.ssh/known_hosts
+ssh-keyscan -H ssh.strato.com > /root/.ssh/known_hosts
 
 echo "printing fingerpint"
 cat /root/.ssh/known_hosts
