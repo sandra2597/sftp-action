@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM compose:2.6
+FROM composer:2.6
 RUN apk add lftp openssh
 RUN composer global require "laravel/installer=~1.1"
 
