@@ -12,6 +12,9 @@ inputs:
   ftp-host:
     description: 'The host name of the provider'
     required: true
+  source:
+    description: 'Path to the source folder'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -22,3 +25,4 @@ runs:
     - ${{ inputs.who-to-greet }}
     - ${{ inputs.ftp-domain }}
     - ${{ inputs.ftp-host }}
+    - ${{ inputs.source }}
