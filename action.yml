@@ -1,11 +1,7 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Send files'
+description: 'Copy folder with ftp to server'
 inputs:
-  who_to_greet:  # id of input
-    description: 'Who to greet'
-    required: false
-    default: 'World'
   ftp_domain:  # id of input
     description: 'The domain name of the website'
     required: true
@@ -15,14 +11,10 @@ inputs:
   source:
     description: 'Path to the source folder'
     required: true
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who_to_greet }}
     - ${{ inputs.ftp_domain }}
     - ${{ inputs.ftp_host }}
     - ${{ inputs.source }}
